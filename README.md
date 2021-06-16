@@ -10,12 +10,12 @@ npm start
 ## Build Docs
 
 ```
-npm run build
+npm run build:doc
 ```
 
 ## Build the Library
 ```
-rollup -c
+npm run build:lib
 ```
 
 ## Use the Library from NPM
