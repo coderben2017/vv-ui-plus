@@ -1,6 +1,6 @@
 {
   "name": "vv-ui-plus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["UI", "组件库", "vue", "vue3", "vite"],
   "files": [
     "dist/lib/*"
