@@ -1,0 +1,247 @@
+.vv-switch {
+  height: 22px;
+  width: 44px;
+  border: none;
+  background: #bfbfbf;
+  border-radius: 11px;
+  position: relative;
+}
+.vv-switch > span {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 18px;
+  width: 18px;
+  background: white;
+  border-radius: 9px;
+  transition: all 250ms;
+}
+.vv-switch.vv-checked {
+  background: #1890ff;
+}
+.vv-switch.vv-checked > span {
+  left: calc(100% - 18px - 2px);
+}
+.vv-switch:focus {
+  outline: none;
+}
+.vv-switch:active > span {
+  width: 22px;
+}
+.vv-switch.vv-checked:active > span {
+  width: 22px;
+  margin-left: -4px;
+}
+
+.vv-button {
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0 12px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  background: white;
+  color: #333;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  transition: background 250ms;
+}
+.vv-button + .vv-button {
+  margin-left: 8px;
+}
+.vv-button:hover, .vv-button:focus {
+  color: #40a9ff;
+  border-color: #40a9ff;
+}
+.vv-button:focus {
+  outline: none;
+}
+.vv-button::-moz-focus-inner {
+  border: 0;
+}
+.vv-button.vv-theme-link {
+  background: transparent;
+  box-shadow: none;
+  color: #40a9ff;
+  border: 0;
+}
+.vv-button.vv-theme-link:hover, .vv-button.vv-theme-link:focus {
+  color: #73c0ff;
+}
+.vv-button.vv-theme-text {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+  color: inherit;
+}
+.vv-button.vv-theme-text:hover, .vv-button.vv-theme-text:focus {
+  background: #f2f2f2;
+}
+.vv-button.vv-size-big {
+  font-size: 24px;
+  height: 48px;
+  padding: 0 16px;
+}
+.vv-button.vv-size-small {
+  font-size: 12px;
+  height: 20px;
+  padding: 0 4px;
+}
+.vv-button.vv-theme-button.vv-level-main {
+  background: #40a9ff;
+  color: white;
+  border-color: #40a9ff;
+}
+.vv-button.vv-theme-button.vv-level-main:hover, .vv-button.vv-theme-button.vv-level-main:focus {
+  background: #0d92ff;
+  border-color: #0d92ff;
+}
+.vv-button.vv-theme-button.vv-level-danger {
+  background: red;
+  border-color: red;
+  color: white;
+}
+.vv-button.vv-theme-button.vv-level-danger:hover, .vv-button.vv-theme-button.vv-level-danger:focus {
+  background: #cc0000;
+  border-color: #cc0000;
+}
+.vv-button.vv-theme-link.vv-level-danger {
+  color: red;
+}
+.vv-button.vv-theme-link.vv-level-danger:hover, .vv-button.vv-theme-link.vv-level-danger:focus {
+  color: #cc0000;
+}
+.vv-button.vv-theme-text.vv-level-main {
+  color: #40a9ff;
+}
+.vv-button.vv-theme-text.vv-level-main:hover, .vv-button.vv-theme-text.vv-level-main:focus {
+  color: #0d92ff;
+}
+.vv-button.vv-theme-text.vv-level-danger {
+  color: red;
+}
+.vv-button.vv-theme-text.vv-level-danger:hover, .vv-button.vv-theme-text.vv-level-danger:focus {
+  color: #cc0000;
+}
+.vv-button.vv-theme-button[disabled] {
+  cursor: not-allowed;
+  color: grey;
+}
+.vv-button.vv-theme-button[disabled]:hover {
+  border-color: grey;
+}
+.vv-button.vv-theme-link[disabled], .vv-button.vv-theme-text[disabled] {
+  cursor: not-allowed;
+  color: grey;
+}
+.vv-button .vv-loadingIndicator {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 4px;
+  border-radius: 8px;
+  border-color: #40a9ff #40a9ff #40a9ff transparent;
+  border-style: solid;
+  border-width: 2px;
+  animation: vv-spin 1s infinite linear;
+}
+
+@keyframes vv-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.vv-dialog {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  min-width: 15em;
+  max-width: 90%;
+}
+.vv-dialog-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.vv-dialog-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+.vv-dialog > header {
+  padding: 12px 16px;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.vv-dialog > main {
+  padding: 12px 16px;
+}
+.vv-dialog > footer {
+  padding: 12px 16px;
+  border-top: 1px solid #d9d9d9;
+  text-align: right;
+}
+.vv-dialog-close {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.vv-dialog-close::before, .vv-dialog-close::after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+  background-color: black;
+}
+.vv-dialog-close::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.vv-dialog-close::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.vv-tabs-nav {
+  position: relative;
+  display: flex;
+  color: #333;
+  border-bottom: 1px solid #d9d9d9;
+}
+.vv-tabs-nav-item {
+  padding: 8px 0;
+  margin: 0 16px;
+  cursor: pointer;
+}
+.vv-tabs-nav-item:first-child {
+  margin-left: 0;
+}
+.vv-tabs-nav-item.selected {
+  color: #40a9ff;
+}
+.vv-tabs-nav-indicator {
+  position: absolute;
+  height: 3px;
+  background-color: #40a9ff;
+  left: 0;
+  bottom: -1px;
+  transition: all 200ms;
+}
+.vv-tabs-content {
+  padding: 8px 0;
+}
