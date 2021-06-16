@@ -10,7 +10,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "vite",
-    "build": "vite build"
+    "build:doc": "vite build",
+    "build:lib": "rollup -c"
   },
   "resolutions": {
     "node-sass": "npm:sass@1.26.11"
