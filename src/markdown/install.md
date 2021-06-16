@@ -1,0 +1,15 @@
+# 安装
+
+打开终端运行下列命令：
+
+```
+npm install vv-ui-plus
+```
+
+或
+
+```
+yarn add vv-ui-plus
+```
+
+下一节：[开始使用](#/doc/get-started)
