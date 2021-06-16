@@ -1,5 +1,5 @@
 # VV UI PLUS
-UI library based on Vue3 and Vite
+UI library based on Vue3 and Vite. [Go To GitHub](https://github.com/coderben2017/vv-ui-plus)
 
 ## Start Developing Docs
 
