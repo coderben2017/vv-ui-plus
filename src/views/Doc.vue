@@ -30,10 +30,10 @@
 </template>
 
 <script lang="ts">
-import { inject, onBeforeUnmount, onMounted, Ref } from 'vue'
+import { inject, onBeforeUnmount, onMounted, Ref, defineComponent } from 'vue'
 import TopNav from '../components/TopNav.vue'
 
-export default {
+export default defineComponent({
   components: { TopNav },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuVisible')
@@ -54,7 +54,7 @@ export default {
 
     return { menuVisible }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
