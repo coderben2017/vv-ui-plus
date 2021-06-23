@@ -5,8 +5,8 @@
       <component :is="component" />
     </div>
     <div class="demo-actions">
-      <Button @click="hideCode" v-if="codeVisible">隐藏代码</Button>
-      <Button @click="showCode" v-else>查看代码</Button>
+      <Button @click="changeCodeVisible(false)" v-if="codeVisible">隐藏代码</Button>
+      <Button @click="changeCodeVisible(true)" v-else>查看代码</Button>
     </div>
     <div class="demo-code" v-if="codeVisible">
       <pre
@@ -20,13 +20,15 @@
 </template>
 
 <script lang="ts">
-import { Button } from "../lib/index";
-import "prismjs";
-import "prismjs/themes/prism.css";
-import { ref } from "vue";
-const Prism = (window as any).Prism;
+import { ref } from "vue"
+import "prismjs"
+import "prismjs/themes/prism.css"
+import { Button } from "../lib/index"
+
+const Prism = (window as any).Prism
 
 export default {
+	name: 'Demo',
   components: { Button },
   props: {
     component: {
@@ -35,12 +37,13 @@ export default {
     },
   },
   setup() {
-    const codeVisible = ref(false);
-    const showCode = () => (codeVisible.value = true);
-    const hideCode = () => (codeVisible.value = false);
-    return { Prism, codeVisible, showCode, hideCode };
+    const codeVisible = ref(false)
+
+    const changeCodeVisible = (visible: boolean) => codeVisible.value = visible
+
+    return { Prism, codeVisible, changeCodeVisible }
   },
-};
+}
 </script>
 
 <style lang="scss">

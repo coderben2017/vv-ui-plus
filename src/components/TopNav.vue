@@ -14,8 +14,10 @@
   </div>
 </template>
 <script lang="ts">
-import { inject, Ref } from "vue";
-export default {
+import { inject, Ref, defineComponent } from "vue"
+
+export default defineComponent({
+	name: 'TopNav',
   props: {
     toggleMenuButtonVisible: {
       type: Boolean,
@@ -23,14 +25,15 @@ export default {
     },
   },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
-    const toggleMenu = () => {
-      menuVisible.value = !menuVisible.value;
-    };
-    return { toggleMenu };
+    const menuVisible = inject<Ref<boolean>>("menuVisible")
+
+    const toggleMenu = () => menuVisible.value = !menuVisible.value
+
+    return { toggleMenu }
   },
-};
+})
 </script>
+
 <style lang="scss" scoped>
 $color: #007974;
 

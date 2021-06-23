@@ -5,9 +5,10 @@
   </button>
 </template>
 
-<script>
-import { computed } from "vue";
-export default {
+<script lang="ts">
+import { defineComponent, computed } from "vue"
+
+export default defineComponent({
   props: {
     theme: {
       type: String,
@@ -31,17 +32,17 @@ export default {
     },
   },
   setup(props) {
-    const { size, theme, level } = props;
+    const { size, theme, level } = props
     const classes = computed(() => {
       return {
         [`vv-button-theme-${theme}`]: theme,
         [`vv-size-${size}`]: size,
         [`vv-level-${level}`]: level,
-      };
-    });
-    return { classes };
+      }
+    })
+    return { classes }
   },
-};
+})
 </script>
 
 <style lang="scss">

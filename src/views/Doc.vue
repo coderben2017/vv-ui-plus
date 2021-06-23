@@ -18,16 +18,7 @@
         <h2>组件列表</h2>
         <ol>
           <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
-          </li>
-          <li>
             <router-link to="/doc/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
           </li>
         </ol>
       </aside>
@@ -37,32 +28,35 @@
     </div>
   </div>
 </template>
+
 <script lang="ts">
-import TopNav from "../components/TopNav.vue";
-import { inject, onBeforeUnmount, onMounted, Ref } from "vue";
+import { inject, onBeforeUnmount, onMounted, Ref } from 'vue'
+import TopNav from '../components/TopNav.vue'
+
 export default {
   components: { TopNav },
   setup() {
-    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
-    const hideMenu = () => {
-      if (menuVisible.value) {
-        menuVisible.value = false;
-      }
-    };
+    const menuVisible = inject<Ref<boolean>>('menuVisible')
+
+    const hideMenu = () => menuVisible.value = false
+
     onMounted(() => {
       if (document.body.offsetWidth < 500) {
-        document.getElementById("main").addEventListener("click", hideMenu);
+        document.getElementById('main').addEventListener('click', hideMenu)
       }
-    });
+    })
+
     onBeforeUnmount(() => {
       if (document.body.offsetWidth < 500) {
-        document.getElementById("main").removeEventListener("click", hideMenu);
+        document.getElementById('main').removeEventListener('click', hideMenu)
       }
-    });
-    return { menuVisible };
+    })
+
+    return { menuVisible }
   },
-};
+}
 </script>
+
 <style lang="scss" scoped>
 $lightgreen: #bceeeb;
 .layout {

@@ -9,16 +9,18 @@
 </template>
 
 <script lang="ts">
-import { Button } from "../lib/index";
-export default {
+import { defineComponent } from 'vue'
+import { Button } from '../lib/index'
+
+export default defineComponent({
+  name: 'Button1Demo',
   components: { Button },
   setup() {
     const onClick = () => {
-      console.log("hi");
-    };
-    return { onClick };
-  },
-};
-</script>
+      console.log('hi')
+    }
 
-<style></style>
+    return { onClick }
+  },
+})
+</script>

@@ -18,8 +18,11 @@
 </template>
 
 <script lang="ts">
-import { Button } from "../lib/index";
-export default {
+import { defineComponent } from "vue"
+import { Button } from "../lib/index"
+
+export default defineComponent({
+	name: 'Button2Demo',
   components: { Button },
-};
+})
 </script>
