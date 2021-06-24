@@ -1,6 +1,7 @@
 @import "../variable.scss";
 
 .vv-button {
+	// default
 	min-width: 80px;
 	height: 32px;
 	background-color: #fff;
@@ -8,24 +9,31 @@
 	border: 1px solid $gray-dark;
 	color: $font-color;
 
+	// hover
 	&:hover {
 		opacity: 0.6;
 	}
 
+	// click
 	&:active {
 		opacity: 0.9;
 	}
 
-	&:disabled:not(.vv-button-loading) {
-		cursor: not-allowed;
-		opacity: 0.6;
+	&:disabled {
+		// loading
+		&.vv-button-loading {
+			cursor: unset;
+			opacity: 0.6;
+		}
+
+		// disabled
+		&:not(.vv-button-loading) {
+			cursor: not-allowed;
+			opacity: 0.6;
+		}
 	}
 
-	&:disabled.vv-button-loading {
-		cursor: unset;
-		opacity: 0.6;
-	}
-
+	// theme and type
 	&-border-primary {
 		border-color: $primary-color;
 		color: $primary-color;
