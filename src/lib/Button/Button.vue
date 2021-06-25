@@ -10,9 +10,7 @@
 		]"
     :disabled="disabled || loading"
   >
-    <div v-if="loading" class="vv-loading">
-      <div></div>
-    </div>
+    <span v-if="loading" class="vv-loading"></span>
     <slot v-else></slot>
   </button>
 </template>
