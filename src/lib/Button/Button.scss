@@ -1,7 +1,6 @@
 @import "../variable.scss";
 
 .vv-button {
-	// default
 	min-width: 80px;
 	height: 32px;
 	background-color: #fff;
@@ -9,81 +8,88 @@
 	border: 1px solid $gray-dark;
 	color: $font-color;
 
-	// hover
 	&:hover {
 		opacity: 0.6;
 	}
 
-	// click
 	&:active {
 		opacity: 0.9;
 	}
 
 	&:disabled {
-		// loading
 		&.vv-button-loading {
 			cursor: unset;
 			opacity: 0.6;
 		}
 
-		// disabled
 		&:not(.vv-button-loading) {
 			cursor: not-allowed;
 			opacity: 0.6;
 		}
 	}
 
-	// theme and type
-	&-border-primary {
+	&--large {
+		height: 36px;
+	}
+
+	&--middle {
+		height: 32px;
+	}
+
+	&--small {
+		height: 28px;
+	}
+
+	&--border-primary {
 		border-color: $primary-color;
 		color: $primary-color;
 	}
 
-	&-border-success {
+	&--border-success {
 		border-color: $success-color;
 		color: $success-color;
 	}
 
-	&-border-warning {
+	&--border-warning {
 		border-color: $warning-color;
 		color: $warning-color;
 	}
 
-	&-border-error {
+	&--border-error {
 		border-color: $error-color;
 		color: $error-color;
 	}
 
-	&-border-info {
+	&--border-info {
 		border-color: $info-color;
 		color: $info-color;
 	}
 
-	&-fill-primary {
+	&--fill-primary {
 		background-color: $primary-color;
 		color: #fff;
 		border: none;
 	}
 
-	&-fill-success {
+	&--fill-success {
 		background-color: $success-color;
 		color: #fff;
 		border: none;
 	}
 
-	&-fill-warning {
+	&--fill-warning {
 		background-color: $warning-color;
 		color: #fff;
 		border: none;
 	}
 
-	&-fill-error {
+	&--fill-error {
 		background-color: $error-color;
 		color: #fff;
 		border: none;
 	}
 
-	&-fill-info {
+	&--fill-info {
 		background-color: $info-color;
 		color: #fff;
 		border: none;
